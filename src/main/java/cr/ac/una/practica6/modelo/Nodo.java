@@ -45,6 +45,11 @@ public class Nodo<T> {
             if (hijo.getDato().equals(dato)) {
                 return hijo;
             }
+            // busca en los hijos de manera recursiva
+            Nodo<T> nodo = hijo.buscarHijo(dato);
+            if (nodo != null) {
+                return nodo;
+            }
         }
         return null;
     }

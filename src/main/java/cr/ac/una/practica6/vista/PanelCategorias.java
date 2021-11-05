@@ -140,8 +140,8 @@ public class PanelCategorias extends JPanel {
         int margen = 2;
         int alto = g.getFontMetrics().getHeight() + (margen * 2);
         // la posicion x,y inicial del rectangulo es el punto de referencia
-        int x1 = MARGEN + u.profundidad * (ancho + MARGEN);
-        int y1 = MARGEN + u.altitud * (alto + MARGEN);
+        int x1 = u.profundidad * MARGEN * 2;
+        int y1 = u.altitud * MARGEN * 2;
         // la posicion x,y final del rectangulo es el punto de referencia mas el ancho y
         // alto
         // int x2 = x1 + ancho;
@@ -149,6 +149,11 @@ public class PanelCategorias extends JPanel {
         // el rectangulo es una instancia de Rectangle
         Rectangle r = new Rectangle(x1, y1, ancho, alto);
         drawRect(g, r, new Color(255, 237, 188), nodo.getDato(), foreground);
+
+        // dibujamos de manera recursiva los hijos
+        for (Nodo<String> hijo : nodo.getHijos()) {
+            paintNodo(g, hijo, d, u);
+        }
 
         // salimos del nodo por lo que la profundidad se decrementa
         u.profundidad--;

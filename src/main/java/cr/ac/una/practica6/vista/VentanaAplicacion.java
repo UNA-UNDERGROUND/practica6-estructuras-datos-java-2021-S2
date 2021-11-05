@@ -141,8 +141,14 @@ public class VentanaAplicacion extends javax.swing.JFrame {
     private void onEliminarClicked() {
         String categoria = campoCategoria.getText();
         if (!categoria.isEmpty()) {
-            modelo.eliminarNodo(categoria);
-            panelCategorias.repaint();
+            if (modelo.eliminarNodo(categoria)) {
+                panelCategorias.repaint();
+            }
+            // mostrar mensaje de error cuando el nodo no existe
+            else {
+                JOptionPane.showMessageDialog(this, "La categoría no existe", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+
         }
     }
 
