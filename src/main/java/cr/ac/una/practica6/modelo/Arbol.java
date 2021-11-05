@@ -7,6 +7,10 @@ import java.util.ArrayList;
  */
 public class Arbol<T> {
 
+    public Arbol() {
+
+    }
+
     public void agregarNodo(T padre, T dato) {
         Nodo<T> nodoPadre = buscarNodo(padre);
         Nodo<T> nodoHijo = new Nodo<T>(dato);

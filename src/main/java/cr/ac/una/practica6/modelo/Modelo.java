@@ -16,8 +16,22 @@ public class Modelo {
         return new Dimension(800, 640);
     }
 
+    public void agregarNodo(String padre, String dato) {
+        arbol.agregarNodo(padre, dato);
+    }
+
+    public boolean eliminarNodo(String valor) {
+        return arbol.eliminarNodo(valor);
+    }
+
+    public Arbol<String> getArbol() {
+        return arbol;
+    }
+
     @Override
     public String toString() {
         return "Modelo{" + '}';
     }
+
+    private Arbol<String> arbol = new Arbol<>();
 }

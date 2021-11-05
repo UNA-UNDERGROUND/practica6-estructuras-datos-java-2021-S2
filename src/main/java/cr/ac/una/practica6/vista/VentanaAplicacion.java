@@ -137,11 +137,20 @@ public class VentanaAplicacion extends javax.swing.JFrame {
     }
 
     private void onEliminarClicked() {
-
+        String categoria = campoCategoria.getText();
+        if (!categoria.isEmpty()) {
+            modelo.eliminarNodo(categoria);
+            panelCategorias.repaint();
+        }
     }
 
     private void onIncluirClicked() {
-
+        String categoria = campoCategoria.getText();
+        String padre = campoSuperCategoria.getText();
+        if (!categoria.isEmpty()) {
+            modelo.agregarNodo(padre, categoria);
+            panelCategorias.repaint();
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
