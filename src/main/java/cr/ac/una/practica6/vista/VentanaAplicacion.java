@@ -1,5 +1,7 @@
 package cr.ac.una.practica6.vista;
 
+import javax.swing.JOptionPane;
+
 import cr.ac.una.practica6.modelo.Modelo;
 
 /**
@@ -148,8 +150,14 @@ public class VentanaAplicacion extends javax.swing.JFrame {
         String categoria = campoCategoria.getText();
         String padre = campoSuperCategoria.getText();
         if (!categoria.isEmpty()) {
-            modelo.agregarNodo(padre, categoria);
-            panelCategorias.repaint();
+            if (modelo.agregarNodo(padre, categoria)) {
+                panelCategorias.repaint();
+            }
+            // se muestra un mensaje de error si no se puede incluir la categoria
+            else {
+                JOptionPane.showMessageDialog(this, "No se puede incluir la categoria", "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
 

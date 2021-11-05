@@ -15,8 +15,13 @@ public class Nodo<T> {
         return dato;
     }
 
-    public void agregarHijo(Nodo<T> hijo) {
+    public boolean agregarHijo(Nodo<T> hijo) {
+        // verifica que no existe en los hijos
+        if (hijos.contains(hijo)) {
+            return false;
+        }
         hijos.add(hijo);
+        return true;
     }
 
     public boolean eliminarHijo(T valor) {

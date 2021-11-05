@@ -11,19 +11,21 @@ public class Arbol<T> {
 
     }
 
-    public void agregarNodo(T padre, T dato) {
+    public boolean agregarNodo(T padre, T dato) {
         Nodo<T> nodoPadre = buscarNodo(padre);
         Nodo<T> nodoHijo = new Nodo<T>(dato);
         if (nodoPadre != null) {
-            nodoPadre.agregarHijo(nodoHijo);
-        } else {
+            return nodoPadre.agregarHijo(nodoHijo);
+        } else if (padre == null || (padre != null && padre.equals(""))) {
             hijos.add(nodoHijo);
+            return true;
         }
+        return false;
     }
 
     public boolean eliminarNodo(T dato) {
         for (Nodo<T> nodo : hijos) {
-            if (nodo.equals(dato)) {
+            if (nodo.getDato().equals(dato)) {
                 hijos.remove(nodo);
                 return true;
             } else if (nodo.eliminarHijo(dato)) {
@@ -48,6 +50,10 @@ public class Arbol<T> {
             }
         }
         return null;
+    }
+
+    public ArrayList<Nodo<T>> getNodos() {
+        return hijos;
     }
 
     private ArrayList<Nodo<T>> hijos = new ArrayList<>();

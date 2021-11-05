@@ -16,8 +16,8 @@ public class Modelo {
         return new Dimension(800, 640);
     }
 
-    public void agregarNodo(String padre, String dato) {
-        arbol.agregarNodo(padre, dato);
+    public boolean agregarNodo(String padre, String dato) {
+        return arbol.agregarNodo(padre, dato);
     }
 
     public boolean eliminarNodo(String valor) {

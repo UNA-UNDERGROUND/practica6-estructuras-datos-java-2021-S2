@@ -19,7 +19,7 @@ public class App {
         //</editor-fold>
 
         SwingUtilities.invokeLater(() -> {
-            new VentanaAplicacion("Práctica #6 (Categorías)", new Modelo()).init();
+            new VentanaAplicacion("Práctica #6 (Categorías)", new Modelo());
         });
     }
 }
