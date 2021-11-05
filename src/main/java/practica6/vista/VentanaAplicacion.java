@@ -1,10 +1,5 @@
 package practica6.vista;
 
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
-
 import cr.ac.una.vista.PanelCategorias;
 import practica6.modelo.Modelo;
 
@@ -130,24 +125,6 @@ public class VentanaAplicacion extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    public static void main(String args[]) {
-        //<editor-fold defaultstate="collapsed" desc="Configuración UI">
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-            JFrame.setDefaultLookAndFeelDecorated(true);
-        } catch (ClassNotFoundException
-                | IllegalAccessException
-                | InstantiationException
-                | UnsupportedLookAndFeelException ex) {
-            System.err.printf("Excepción: '%s'%n", ex.getMessage());
-        }
-        //</editor-fold>
-
-        SwingUtilities.invokeLater(() -> {
-            new VentanaAplicacion("Práctica #6 (Categorías)", new Modelo()).init();
-        });
-    }
 
     public void init() {
         setVisible(true);
