@@ -1,4 +1,4 @@
-package practica6.modelo;
+package cr.ac.una.practica6.modelo;
 
 import java.awt.Dimension;
 
@@ -16,4 +16,8 @@ public class Modelo {
         return new Dimension(800, 640);
     }
 
+    @Override
+    public String toString() {
+        return "Modelo{" + '}';
+    }
 }

@@ -1,4 +1,4 @@
-package cr.ac.una.vista;
+package cr.ac.una.practica6.vista;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -13,7 +13,8 @@ import java.awt.event.MouseEvent;
 import javax.swing.JPanel;
 import javax.swing.JViewport;
 import javax.swing.SwingUtilities;
-import practica6.modelo.Modelo;
+
+import cr.ac.una.practica6.modelo.Modelo;
 
 /**
  *
@@ -85,10 +86,23 @@ public class PanelCategorias extends JPanel {
         g.drawRect(r.x, r.y, r.width, r.height);
 
         g.setColor(Color.BLACK);
-        g.drawString(String.format("(%s)", modelo),
-                2 * MARGEN, 3 * MARGEN);
+        
 
         setPreferredSize(new Dimension(d.width, d.height));
+
+        paint(g, d);
+    }
+
+    private void paint(Graphics2D g, Dimension d) {
+        g.drawString(String.format("[%s]", modelo),
+                2 * MARGEN, 3 * MARGEN);
+        
+    }
+
+    // to String
+    @Override
+    public String toString() {
+        return getClass().getName() + "[" + "]";
     }
 
     private final static int MARGEN = 16;

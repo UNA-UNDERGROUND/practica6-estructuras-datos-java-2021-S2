@@ -1,7 +1,6 @@
-package practica6.vista;
+package cr.ac.una.practica6.vista;
 
-import cr.ac.una.vista.PanelCategorias;
-import practica6.modelo.Modelo;
+import cr.ac.una.practica6.modelo.Modelo;
 
 /**
  *
@@ -17,10 +16,12 @@ public class VentanaAplicacion extends javax.swing.JFrame {
         super(titulo);
         this.modelo = modelo;
         initComponents();
+        init();
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
@@ -29,12 +30,15 @@ public class VentanaAplicacion extends javax.swing.JFrame {
         panelControl = new javax.swing.JPanel();
         etqNuevaCat = new javax.swing.JLabel();
         campoCategoria = new javax.swing.JTextField();
-        espacio1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 16), new java.awt.Dimension(0, 8), new java.awt.Dimension(32767, 16));
+        espacio1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 16), new java.awt.Dimension(0, 8),
+                new java.awt.Dimension(32767, 16));
         etqPertenece = new javax.swing.JLabel();
         campoSuperCategoria = new javax.swing.JTextField();
-        espacio2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 16), new java.awt.Dimension(0, 16), new java.awt.Dimension(32767, 16));
+        espacio2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 16), new java.awt.Dimension(0, 16),
+                new java.awt.Dimension(32767, 16));
         btnIncluir = new javax.swing.JButton();
-        espacio3 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 32767));
+        espacio3 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0),
+                new java.awt.Dimension(0, 32767));
         btnEliminar = new javax.swing.JButton();
         panelDScroll = new javax.swing.JScrollPane();
         panelCategorias = new PanelCategorias(modelo);
@@ -110,14 +114,10 @@ public class VentanaAplicacion extends javax.swing.JFrame {
 
         javax.swing.GroupLayout panelCategoriasLayout = new javax.swing.GroupLayout(panelCategorias);
         panelCategorias.setLayout(panelCategoriasLayout);
-        panelCategoriasLayout.setHorizontalGroup(
-            panelCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
-        );
-        panelCategoriasLayout.setVerticalGroup(
-            panelCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 296, Short.MAX_VALUE)
-        );
+        panelCategoriasLayout.setHorizontalGroup(panelCategoriasLayout
+                .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGap(0, 274, Short.MAX_VALUE));
+        panelCategoriasLayout.setVerticalGroup(panelCategoriasLayout
+                .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGap(0, 296, Short.MAX_VALUE));
 
         panelDScroll.setViewportView(panelCategorias);
 
@@ -128,6 +128,20 @@ public class VentanaAplicacion extends javax.swing.JFrame {
 
     public void init() {
         setVisible(true);
+        btnEliminar.addActionListener(l -> {
+            onEliminarClicked();
+        });
+        btnIncluir.addActionListener(l -> {
+            onIncluirClicked();
+        });
+    }
+
+    private void onEliminarClicked() {
+
+    }
+
+    private void onIncluirClicked() {
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

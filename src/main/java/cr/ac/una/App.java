@@ -1,11 +1,11 @@
-package practica6;
+package cr.ac.una;
 
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
-import practica6.modelo.Modelo;
-import practica6.vista.VentanaAplicacion;
+import cr.ac.una.practica6.modelo.Modelo;
+import cr.ac.una.practica6.vista.VentanaAplicacion;
 
 public class App {
     public static void main(String args[]) {
